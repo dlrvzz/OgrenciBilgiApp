@@ -15,7 +15,7 @@ namespace OkulBilgiApp
         public DbSet<Ders> TblDersler { get; set; }
         public DbSet<OgrenciDers> TblOgrenciDers { get; set; }
         public DbSet<Sinif> TblSiniflar { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //entity framework core da veritabanı ile konfügrasyon yapılması için yazmış olduğum bi kod. 
         {
             base.OnConfiguring(optionsBuilder); //database'e bağlanmak için yazdığım kod
             optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=OkulBilgiDb;Integrated Security=true;TrustServerCertificate=true");
@@ -24,7 +24,8 @@ namespace OkulBilgiApp
 
   // Veritabanı tabloları ve ilişkiler için model oluşturma işlemleri.
         
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //konfigrasyonların yapılandırıldığı bölüm 
+                                                                           //model ile tablo nesne sütunlar ve anahtar kelime özellikleri belirlenebilir.
         {
             base.OnModelCreating(modelBuilder);
 
