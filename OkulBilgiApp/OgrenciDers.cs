@@ -12,7 +12,8 @@ namespace OkulBilgiApp
         public int OgrenciId { get; set; }
         public int DersId { get; set; }
 
-        public Ogrenci? Ogrenci { get; set; }
+        public Ogrenci? Ogrenci { get; set; } //değer nullable gelebilir bu yüzden her zaman değer atanmak zorunda değldir. 
+                                             //nellikle çoktan çoka ilişkilerde kullanırız
         public Ders? Ders { get; set; }
     }
 }
